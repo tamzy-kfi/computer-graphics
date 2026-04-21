@@ -23,11 +23,9 @@ int main()
 	// Initialize GLFW
 	glfwInit();
 
-	// Tell GLFW what version of OpenGL we are using
+	// Tell GLFW what version of OpenGL we are using 
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-
-	// Tell GLFW we are using the CORE profile
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Create window
@@ -64,15 +62,16 @@ int main()
 	glAttachShader(shaderProgram, fragmentShader);
 	glLinkProgram(shaderProgram);
 
+	// Delete shaders
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
 
-	// Vertices coordinates
+	// Triangle vertices
 	GLfloat vertices[] =
 	{
 		-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
-		0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
-		0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f
+		 0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
+		 0.0f,  0.5f * float(sqrt(3)) * 2 / 3, 0.0f
 	};
 
 	GLuint VAO, VBO;
@@ -94,9 +93,8 @@ int main()
 	// Main loop
 	while (!glfwWindowShouldClose(window))
 	{
-		// White background
-		glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
-
+		// Red background
+		glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		glUseProgram(shaderProgram);
@@ -107,13 +105,12 @@ int main()
 		glfwPollEvents();
 	}
 
-	// Delete objects
+	// Clean up
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
 	glDeleteProgram(shaderProgram);
 
 	glfwDestroyWindow(window);
 	glfwTerminate();
-
 	return 0;
 }
