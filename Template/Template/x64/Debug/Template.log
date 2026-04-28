@@ -1,0 +1,13 @@
+﻿  Main.cpp
+C:\Users\Lenovo\source\repos\Template\Template\Main.cpp(95,12): error C2086: 'SDL_Event event': redefinition
+      C:\Users\Lenovo\source\repos\Template\Template\Main.cpp(21,12):
+      see declaration of 'event'
+  
+C:\Users\Lenovo\source\repos\Template\Template\Main.cpp(96,7): error C2374: 'running': redefinition; multiple initialization
+      C:\Users\Lenovo\source\repos\Template\Template\Main.cpp(20,7):
+      see declaration of 'running'
+  
+C:\Users\Lenovo\source\repos\Template\Template\Main.cpp(96,7): error C2086: 'bool running': redefinition
+      C:\Users\Lenovo\source\repos\Template\Template\Main.cpp(20,7):
+      see declaration of 'running'
+  
